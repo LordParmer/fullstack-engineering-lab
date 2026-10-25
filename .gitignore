@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Secrets and local config: keep credentials in environment variables
+.env
+.env.*
+!.env.example
+.databrickscfg
+
+# Claude Code worktrees
+.claude/worktrees/
+
+# Local data and Spark output
+spark-warehouse/
+metastore_db/
+derby.log

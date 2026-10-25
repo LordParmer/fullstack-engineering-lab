@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Test this lab",
+      "detail": "Run pytest in the folder of the file you have open",
+      "type": "shell",
+      "command": "python -m pytest \"${fileDirname}\" -q",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run this file",
+      "type": "shell",
+      "command": "python \"${file}\"",
+      "problemMatcher": []
+    }
+  ]
+}
