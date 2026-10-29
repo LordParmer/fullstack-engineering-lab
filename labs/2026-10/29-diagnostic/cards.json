@@ -1,0 +1,28 @@
+{
+  "deck": "daily-2026-10-29",
+  "title": "Day 1 · Diagnostic: Software engineering",
+  "source": "labs/2026-10/29-diagnostic/",
+  "cards": [
+    {
+      "id": "c1",
+      "topic": "truthiness",
+      "kind": "daily",
+      "q": "Why is `if v:` the wrong filter for removing missing values from a list of measurements?",
+      "a": "`if v:` tests truthiness, and Python treats 0, 0.0, empty strings and empty lists as false as well as None. A real measurement of 0.0 would be dropped. Use `if v is not None:` to exclude only None."
+    },
+    {
+      "id": "c2",
+      "topic": "test strength",
+      "kind": "daily",
+      "q": "A test passes. What question must you ask before trusting it, and how do you answer it?",
+      "a": "Would this test fail if the code were broken? Prove it by temporarily breaking the code and confirming the test fails. Two bugs can cancel out, as in snippet B where dropping 0.0 and dividing by the wrong count still gave 5."
+    },
+    {
+      "id": "c3",
+      "topic": "list vs set",
+      "kind": "daily",
+      "q": "Why is `x in my_list` slow for a million items, and what should you use instead?",
+      "a": "A membership check on a list scans every element, which is O(n). A set uses hashing, so each lookup takes about constant time, O(1). It's the same idea as a broadcast hash join building a hash table."
+    }
+  ]
+}
