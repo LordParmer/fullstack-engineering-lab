@@ -1,0 +1,77 @@
+{
+  "deck": "quiz-2026-10-30",
+  "title": "Week quiz · 2026-10-30",
+  "source": "quizzes/2026-10-30.md",
+  "cards": [
+    {
+      "id": "q1",
+      "topic": "truthiness",
+      "kind": "quiz",
+      "q": "Name four values besides `None` that Python treats as false. Why does `[v for v in values if v]` give the wrong answer when you want to drop only missing measurements?",
+      "a": "`0`, `0.0`, `\"\"`, `[]` (also `{}`, `set()`, `False`). `if v` tests truthiness, so a real measurement of `0.0` is dropped along with `None`. Use `if v is not None` to drop only missing values."
+    },
+    {
+      "id": "q2",
+      "topic": "truthiness",
+      "kind": "quiz",
+      "q": "Predict the output:\n```python\nvals = [3.0, None, 0.0, 5.0]\nkept = [v for v in vals if v]\nprint(len(kept), sum(kept) / len(kept))\n```",
+      "a": "It prints `2 4.0`. Both `None` and `0.0` are falsy, so `kept` is `[3.0, 5.0]`. The correct average of the measured values (3.0, 0.0, 5.0) is about 2.67."
+    },
+    {
+      "id": "q3",
+      "topic": "test strength",
+      "kind": "quiz",
+      "q": "This test passes. Find the two bugs in `average`, and explain why the test didn't catch either of them.\n```python\ndef average(yields: dict[str, float | None]) -> float:\n    measured = [v for v in yields.values() if v]\n    return sum(measured) / len(yields)\n\ndef test_average():\n    assert average({\"a\": 0.0, \"b\": 10.0}) == 5.0\n```",
+      "a": "Bug 1: `if v` drops the real `0.0`. Bug 2: it divides by `len(yields)` (all runs, including `None`) instead of `len(measured)`. With this input they cancel: `[10.0] / 2 = 5.0`, which happens to be right. A test with a `None`, such as `{\"a\": 0.0, \"b\": 10.0, \"c\": None}`, would return 3.33 and fail."
+    },
+    {
+      "id": "q4",
+      "topic": "test strength",
+      "kind": "quiz",
+      "q": "Your new test passes on the first run. What's the one question to ask before you trust it, and what's a quick, concrete way to answer it?",
+      "a": "\"Would this test fail if the code were broken?\" Break the code on purpose (for example change `is not None` back to `if v`, or the divisor to `len(yields)`), run the test, and confirm it fails. Then undo the change."
+    },
+    {
+      "id": "q5",
+      "topic": "list vs set",
+      "kind": "quiz",
+      "q": "You have 1,000,000 known customer IDs and need to check 50,000 incoming events against them. Design A keeps the IDs in a `list` and runs `event.customer_id in known_ids`. Design B builds `known_ids = set(ids)` once and does the same check. Which do you pick, and why? Give the rough cost of each.",
+      "a": "Design B. A list membership check scans every element, O(n), so A costs about 50,000 × 1,000,000 comparisons in the worst case. A set hashes, so each lookup is about O(1): one O(n) pass to build it, then about 50,000 cheap lookups."
+    },
+    {
+      "id": "q6",
+      "topic": "mutable defaults",
+      "kind": "quiz",
+      "q": "Predict the output, then say how you'd fix the function.\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n\nprint(add_tag(\"a\"))\nprint(add_tag(\"b\"))\n```",
+      "a": "It prints `['a']` then `['a', 'b']`. The default list is created once, when the function is defined, and shared across calls. Fix: `def add_tag(tag, tags=None):` and inside, `if tags is None: tags = []`."
+    },
+    {
+      "id": "q7",
+      "topic": "function design",
+      "kind": "quiz",
+      "q": "When no runs were measured (every value is `None`), `average_yield` could either (A) return `0.0` or (B) raise `ValueError`. Which is better, and why?",
+      "a": "B, raising `ValueError`. `0.0` is a valid yield, so returning it would silently pass off \"no data\" as \"a measured average of zero\", and callers couldn't tell the difference. Raising makes the caller decide, and it matches the docstring."
+    },
+    {
+      "id": "q8",
+      "topic": "HTTP status codes",
+      "kind": "quiz",
+      "q": "Give the HTTP status code for each case, and say in one phrase what separates 401 from 403: (a) a POST created a new order; (b) the request body is missing a required field; (c) no auth token was sent; (d) the token is valid but the user isn't allowed to delete this order; (e) the order ID doesn't exist.",
+      "a": "(a) 201 Created; (b) 400 Bad Request (422 is also common for validation errors); (c) 401 Unauthorized; (d) 403 Forbidden; (e) 404 Not Found. 401 means \"we don't know who you are\", 403 means \"we know who you are, and you're not allowed\"."
+    },
+    {
+      "id": "q9",
+      "topic": "function design",
+      "kind": "quiz",
+      "q": "Design A: `report(path)` opens a CSV, parses it, computes the average yield and prints it. Design B: `parse_yields(path) -> dict`, `average_yield(yields) -> float`, and a small `main()` that calls them and prints. Which is easier to test, and why?",
+      "a": "Design B. `average_yield` is a pure function, so you can test it with a dict literal, with no files or captured stdout. Each piece has one job, so a failing test points at one place, and the parsing and the math can be reused separately."
+    },
+    {
+      "id": "q10",
+      "topic": "truthiness",
+      "kind": "quiz",
+      "q": "A user's config sets `{\"port\": 0}` to ask the OS for any free port. What does this return, and what's the fix?\n```python\ndef get_port(cfg: dict) -> int:\n    return cfg.get(\"port\") or 8080\n```",
+      "a": "It returns 8080, because `0` is falsy and `or` falls through to the default. Fix: `port = cfg.get(\"port\"); return 8080 if port is None else port`, or `cfg.get(\"port\", 8080)` if a missing key is the only case to default."
+    }
+  ]
+}

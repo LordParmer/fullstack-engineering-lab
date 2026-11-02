@@ -7,3 +7,11 @@
 - Check: n/a (diagnostic: self-rating mostly 0s; concepts 2/8; code reading 0.5/3)
 - Struggled with: truthiness vs `is not None`, test design (would this test catch the bug?), function design, HTTP status codes, list vs set lookup cost, mutable default arguments
 - Next: Diagnostic: Data engineering
+
+## Day 2 · 2026-11-02 · Diagnostic: Data engineering
+- Track: Data engineering · Month 1, week 1 (diagnostic)
+- Recall: n/a (diagnostic) · Diagnostic quiz: 0/10 right, 2 partial (ST vs MV, UC grants)
+- Lab: in chat · done (SCD2 MERGE with staged source + null-safe compare)
+- Check: 0/4
+- Struggled with: explaining SCD2 MERGE mechanics (merge key, null-safe compare, duplicate sources); streaming watermarks, broadcast joins, liquid clustering, bundle targets + OIDC auth, Iceberg REST catalog interop and PySpark testing all skipped
+- Next: Diagnostic: AI engineering

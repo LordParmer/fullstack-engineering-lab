@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-02",
+  "title": "Day 2 · SCD Type 2 MERGE",
+  "source": "in chat",
+  "cards": [
+    { "id": "c1", "topic": "SCD2 merge key", "kind": "daily", "q": "In an SCD Type 2 MERGE, why are changed rows staged a second time with a NULL merge key?", "a": "Matched rows never reach WHEN NOT MATCHED, so the first copy can only close the old row. The NULL-key copy can never match, so it falls through to INSERT and creates the new current version." },
+    { "id": "c2", "topic": "Null-safe compare", "kind": "daily", "q": "Why does t.address <> s.address miss some changes, and what do you use instead?", "a": "Comparing anything to NULL with <> returns NULL, not true, so changes to or from NULL are skipped. Use IS DISTINCT FROM, or NOT (a <=> b)." },
+    { "id": "c3", "topic": "MERGE duplicates", "kind": "daily", "q": "What happens if the MERGE source has two rows for the same key, and how do you fix it?", "a": "The MERGE fails because multiple source rows match one target row. Keep only the latest row per key with row_number() before merging, or use Auto CDC with SEQUENCE BY." }
+  ]
+}
