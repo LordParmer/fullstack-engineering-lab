@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-02-day2",
+  "title": "Day 2 · uv, pytest and Python basics",
+  "source": "in chat",
+  "cards": [
+    { "id": "c1", "topic": "uv add --dev", "kind": "daily", "q": "What four things does `uv add --dev pytest` change in a project?", "a": "It creates the .venv environment, installs pytest into it, adds pytest to the dev dependency group in pyproject.toml, and records exact versions in uv.lock." },
+    { "id": "c2", "topic": "uv run", "kind": "daily", "q": "Why run `uv run pytest` instead of `pytest`?", "a": "uv run executes the command inside the project's own .venv, with its Python and installed packages, so the tests can import your package. A bare pytest may be missing or use a different Python." },
+    { "id": "c3", "topic": "Mutable defaults", "kind": "daily", "q": "Why does `def add_item(item, items=[])` keep growing across calls, and what is the fix?", "a": "The default list is created once, when the function is defined, and every call shares it. Use `items=None`, then `if items is None: items = []` inside the function." }
+  ]
+}
