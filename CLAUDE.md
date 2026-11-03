@@ -13,7 +13,8 @@ This is a learning repo. The owner is working through a 12-month self-directed c
 
 - `curriculum.md`: the plan, by month and week (create it if they ask for one; until then the README lists the tracks)
 - `progress.md`: one entry per daily session, newest last; the last entry's `Next:` line is the next topic
-- `labs/<YYYY-MM>/<DD>-<slug>/`: one folder per lab, with `README.md` (goal, steps, "Done when" criteria), starter code with `TODO`s, tests, and `cards.json` (that day's flashcards)
+- `labs/<YYYY-MM>/<DD>-<slug>/`: one folder per lab, with `README.md` (goal, steps, "Done when" criteria), starter code with `TODO`s, tests, and `cards.json` (that day's flashcards). `<DD>` is the session date, and `<slug>` always includes the track (e.g. `03-diagnostic-machine-learning`) because several sessions can share a date. A lab done in chat still gets a folder with a short `README.md` (date, track, status, what happened) next to its `cards.json`
+- `quizzes/<date>.md`, `quizzes/<date>.cards.json` and `quizzes/<date>-review-list.md`: weekly quizzes and review lists
 - `reviews/<date>.md` and `reviews/<date>.cards.json`: weekly code reviews written by a scheduled cloud agent on `claude/weekly-review-*` branches
 
 ## Conventions

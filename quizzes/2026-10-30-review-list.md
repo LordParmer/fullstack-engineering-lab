@@ -1,10 +1,10 @@
 # Review list · 2026-10-30
 
-> There's no review history on the flashcard page yet (no `srs` document), so nothing is overdue and there are no lapse or ease numbers. This list is built from `progress.md` (Day 1 "Struggled with") and the Day 1 cards in `labs/2026-10/29-diagnostic/cards.json`.
+> There's no review history on the flashcard page yet (no `srs` document), so nothing is overdue and there are no lapse or ease numbers. This list is built from `progress.md` (Day 1 "Struggled with") and the Day 1 cards in `labs/2026-10/29-diagnostic-software-engineering/cards.json`.
 
 ## Suggested order for Friday
 
-1. **Flashcard page, Review tab, about 10 minutes.** If the Day 1 deck (`daily-2026-10-29`) isn't on the page yet, import `labs/2026-10/29-diagnostic/cards.json` first. Go through the starter deck and the three Day 1 cards below.
+1. **Flashcard page, Review tab, about 10 minutes.** If the Day 1 deck (`daily-2026-10-29`) isn't on the page yet, import `labs/2026-10/29-diagnostic-software-engineering/cards.json` first. Go through the starter deck and the three Day 1 cards below.
 2. **Quiz tab: "Week quiz · 2026-10-30"**, or work through `quizzes/2026-10-30.md` on paper before opening the answers.
 3. If you have time left, reread `yields.py` and `test_yields.py`. Break `average_yield` on purpose and check that a test fails.
 
