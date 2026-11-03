@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-03-day5",
+  "title": "Day 5 · Diagnostic: app development",
+  "source": "in chat",
+  "cards": [
+    { "id": "c1", "topic": "401 vs 403", "kind": "daily", "q": "When does an API return 401, and when does it return 403?", "a": "401 Unauthorized means the request isn't authenticated, for example there's no login token or it's invalid. 403 Forbidden means the user is logged in but isn't allowed to do this action." },
+    { "id": "c2", "topic": "authn vs authz", "kind": "daily", "q": "What's the difference between authentication and authorization?", "a": "Authentication proves who you are, for example by logging in or re-entering credentials to e-sign. Authorization decides what you're allowed to do, for example whether your role can approve a batch record." },
+    { "id": "c3", "topic": "frontend secrets", "kind": "daily", "q": "Why can't an API key go in frontend JavaScript?", "a": "Everything sent to the browser can be read in dev tools, and minifying hides nothing. Keep secrets on the backend and have the frontend call the backend, which then calls the outside service." }
+  ]
+}

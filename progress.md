@@ -45,3 +45,12 @@
 - Check: diagnostic 0.5/8; self-rating avg 0.4 (7 of 12 areas at 0)
 - Struggled with: all AI eng concepts (token ≠ word, context window, temperature, embeddings, RAG, tool calling, eval, prompt injection); Python object creation (Client()), `in` checks in loops
 - Next: Diagnostic: app development
+
+## Day 5 · 2026-11-03 · Diagnostic: app development
+
+- Track: App development · Month 1, week 1 (diagnostic)
+- Recall: paused until diagnostic week ends
+- Lab: in chat · not started (deferred until teaching begins)
+- Check: n/a (diagnostic 0/8, self-rating 0 in all 12 areas)
+- Struggled with: all app development basics; first exposure (HTTP, browser, JS async, React state, CORS, auth)
+- Next: Week 1 quiz + placement report

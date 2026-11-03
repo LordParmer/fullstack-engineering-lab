@@ -7,7 +7,7 @@
 Nothing to install beyond pytest: it uses Python's built-in `sqlite3`, and there's no web server. Each handler returns `(status_code, body)`, which is what a framework like FastAPI would turn into an HTTP response.
 
 ```bash
-python -m pytest labs/2026-11/04-diagnostic-app-development -q
+python -m pytest labs/2026-11/03-diagnostic-app-development -q
 ```
 
 All 13 tests fail at the start, because the two handlers raise `NotImplementedError`.
@@ -19,7 +19,7 @@ All 13 tests fail at the start, because the two handlers raise `NotImplementedEr
 4. In `ANSWERS.md` (create it), list every bug you can find in `naive_get_note` (at least three), one line each: what goes wrong and with what input.
 
 ## Done when
-- [ ] `python -m pytest labs/2026-11/04-diagnostic-app-development -q` passes (13 tests)
+- [ ] `python -m pytest labs/2026-11/03-diagnostic-app-development -q` passes (13 tests)
 - [ ] Neither handler builds SQL with an f-string or `+`: values go in as `?` parameters
 - [ ] `ANSWERS.md` names at least three bugs in `naive_get_note`, each with an input that triggers it
 
