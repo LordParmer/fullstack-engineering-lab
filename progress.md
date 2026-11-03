@@ -54,3 +54,12 @@
 - Check: n/a (diagnostic 0/8, self-rating 0 in all 12 areas)
 - Struggled with: all app development basics; first exposure (HTTP, browser, JS async, React state, CORS, auth)
 - Next: Week 1 quiz + placement report
+
+## Day 6 · 2026-11-03 · ML engineering diagnostic
+
+- Track: ML · Month 1, week 1 (diagnostic)
+- Recall: 0/4, missed: SCD2 NULL merge key, uv run, mutable defaults, target leakage (all skipped)
+- Lab: in chat · done (self-rating all 0, diagnostic 0/10, so ML engineering starts at foundations by choice)
+- Check: 0/3 (skipped)
+- Struggled with: all ML engineering concepts; first exposure
+- Next: Week 1 quiz + placement report, starting with a re-test of the four skipped recall items

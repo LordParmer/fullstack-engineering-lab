@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-03-day6",
+  "title": "Day 6 · ML engineering diagnostic",
+  "source": "in chat",
+  "cards": [
+    { "id": "c1", "topic": "registry alias", "kind": "daily", "q": "What is a model registry alias, and why should a scoring job load by alias instead of by version number?", "a": "An alias such as @champion is a named pointer to one model version. The job always loads the alias, so promoting or rolling back a model means moving the pointer, with no code change." },
+    { "id": "c2", "topic": "training reproducibility", "kind": "daily", "q": "What must you log at training time to reproduce a model trained on a Delta table, and what can still break it?", "a": "The table name and Delta version, plus the code commit, pinned environment, parameters and seed. VACUUM can delete the files that old versions depend on, so set retention to match or snapshot the training data." },
+    { "id": "c3", "topic": "training-serving skew", "kind": "daily", "q": "What is training–serving skew, and how do you prevent it?", "a": "The features a model sees in production are computed differently from the ones it was trained on, for example Spark SQL for training and Python at request time. Prevent it with one shared feature definition or feature table that both paths use." }
+  ]
+}
