@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-03",
+  "title": "Day 3 · Machine learning diagnostic",
+  "source": "in chat",
+  "cards": [
+    { "id": "c1", "topic": "target leakage", "kind": "daily", "q": "What is target leakage, and why does it inflate test scores?", "a": "A feature carries information you would not have at prediction time, often because it is a consequence of the outcome. The model learns that shortcut, so test scores look great but the model fails in production." },
+    { "id": "c2", "topic": "imbalanced metrics", "kind": "daily", "q": "2% of batches fail and a model always predicts 'passed'. What is its accuracy, and which metric exposes it?", "a": "98% accuracy, yet it catches zero failures. Recall on the failed class is 0, and a confusion matrix shows it too. Accuracy misleads on imbalanced data." },
+    { "id": "c3", "topic": "preprocessing leakage", "kind": "daily", "q": "When do you fit a StandardScaler relative to the train/test split, and why?", "a": "Split first, then fit the scaler on the training set only and use it to transform both sets. Fitting on all the data leaks the test set's statistics into training. A scikit-learn Pipeline enforces this automatically." }
+  ]
+}

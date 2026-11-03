@@ -1,0 +1,10 @@
+{
+  "deck": "daily-2026-11-03-ai-engineering",
+  "title": "Day 4 · Diagnostic: AI engineering",
+  "source": "day4-first-llm-call/",
+  "cards": [
+    { "id": "c1", "topic": "Tokens", "kind": "daily", "q": "What is a token, and what is the context window?", "a": "A token is a sub-word piece of text, about 3/4 of an English word on average. The context window is the hard limit on input plus output tokens in one call, and you pay per token." },
+    { "id": "c2", "topic": "Temperature", "kind": "daily", "q": "What does temperature 0 do, and what doesn't it guarantee?", "a": "It makes the model pick the most likely next token, so output is close to deterministic. It doesn't guarantee identical output on every run, and it doesn't make the answer correct." },
+    { "id": "c3", "topic": "Python objects", "kind": "daily", "q": "Why does `client = ...` followed by `client.models` raise AttributeError: 'ellipsis' object has no attribute 'models'?", "a": "`...` is a real placeholder value (Ellipsis), so client was never a Client object. Create one with `client = genai.Client()`. Read tracebacks bottom-up: the error type, then the line number." }
+  ]
+}
